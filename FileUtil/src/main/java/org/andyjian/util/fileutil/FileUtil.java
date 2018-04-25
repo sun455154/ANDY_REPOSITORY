@@ -41,7 +41,7 @@ public class FileUtil {
 	 * 取出根目錄下所有的檔案.
 	 *
 	 * @param 根目錄
-	 * @return 所以檔案
+	 * @return 所有檔案
 	 */
 	public static List<File> recursiveFileToList(File file) {
 		List<File> result = new ArrayList<>();
