@@ -35,4 +35,25 @@ public class FileUtil {
 		}
 		return resultList;
 	}
+	
+	
+	/**
+	 * 取出根目錄下所有的檔案.
+	 *
+	 * @param 根目錄
+	 * @return 所以檔案
+	 */
+	public static List<File> recursiveFileToList(File file) {
+		List<File> result = new ArrayList<>();
+		for (String fileName : file.list()) {
+			File subFile = new File(file, fileName);
+			if (subFile.isDirectory()) {
+				result.addAll(recursiveFileToList(subFile));
+			} else {
+				result.add(subFile);
+			}
+		}
+		return result;
+	}
+	
 }
