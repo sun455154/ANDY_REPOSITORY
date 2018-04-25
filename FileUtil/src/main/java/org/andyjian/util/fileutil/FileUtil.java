@@ -45,8 +45,7 @@ public class FileUtil {
 	 */
 	public static List<File> recursiveFileToList(File file) {
 		List<File> result = new ArrayList<>();
-		for (String fileName : file.list()) {
-			File subFile = new File(file, fileName);
+		for (File subFile : file.listFiles()) {
 			if (subFile.isDirectory()) {
 				result.addAll(recursiveFileToList(subFile));
 			} else {
